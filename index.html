@@ -11,55 +11,87 @@
       font-family: "Segoe UI", Arial, sans-serif;
       margin: 0;
       padding: 16px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
     }
-    h2 { margin: 0 0 12px 0; }
+    h2 {
+      margin: 0 0 16px 0;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      font-size: 28px;
+    }
     .row { display: flex; gap: 12px; flex-wrap: wrap; }
     .card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 12px;
+      border: 2px solid #fff;
+      border-radius: 16px;
+      padding: 20px;
       max-width: 760px;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
     }
-    label { display: block; font-size: 13px; margin: 10px 0 4px; }
+    label {
+      display: block;
+      font-size: 13px;
+      margin: 10px 0 4px;
+      font-weight: 600;
+      color: #4a5568;
+    }
     input[type="text"], input[type="number"], textarea {
       width: 100%;
       box-sizing: border-box;
-      padding: 8px;
-      border: 1px solid #bbb;
-      border-radius: 6px;
+      padding: 10px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
       font-size: 14px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     }
     textarea { min-height: 80px; resize: vertical; }
-    .actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .actions { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
     button {
-      padding: 8px 14px;
-      border: 1px solid #888;
-      border-radius: 6px;
-      background: #f3f3f3;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
       cursor: pointer;
       font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     button.primary {
-      border-color: #0b57d0;
-      background: #0b57d0;
-      color: #fff;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
-    .hint { font-size: 12px; color: #555; margin-top: 6px; }
+    .hint {
+      font-size: 12px;
+      color: #718096;
+      margin-top: 8px;
+      padding: 8px;
+      background: #edf2f7;
+      border-radius: 6px;
+    }
     pre#log {
       margin: 12px 0 0;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background: #fafafa;
+      padding: 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
       min-height: 90px;
       overflow: auto;
       font-size: 12px;
       line-height: 1.35;
       white-space: pre-wrap;
     }
-    .ok { color: #137333; }
-    .err { color: #b3261e; }
+    .ok { color: #38a169; font-weight: 600; }
+    .err { color: #e53e3e; font-weight: 600; }
   </style>
 
   <script>
