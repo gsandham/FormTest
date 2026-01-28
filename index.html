@@ -81,10 +81,12 @@
       const customerNo = $("customerNo").value.trim();
       const amountRaw = $("amount").value;
       const amount = amountRaw === "" ? null : Number(amountRaw);
+      const otherAmountRaw = $("otherAmount").value;
+      const otherAmount = otherAmountRaw === "" ? null : Number(otherAmountRaw);
       const rush = $("rush").checked;
       const notes = $("notes").value;
 
-      return { customerNo, amount, rush, notes };
+      return { customerNo, amount, otherAmount, rush, notes };
     }
 
     function validate(data) {
@@ -133,6 +135,7 @@
           if (obj && typeof obj === "object") {
             if (obj.customerNo != null) $("customerNo").value = obj.customerNo;
             if (obj.amount != null) $("amount").value = obj.amount;
+            if (obj.otherAmount != null) $("otherAmount").value = obj.otherAmount;
             if (obj.rush != null) $("rush").checked = !!obj.rush;
             if (obj.notes != null) $("notes").value = obj.notes;
             log("Prefilled fields from AL JSON.", "ok");
@@ -176,6 +179,13 @@
           <input id="rush" type="checkbox" checked />
           Rush?
         </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div style="width: 180px;">
+        <label for="otherAmount">Other Amount</label>
+        <input id="otherAmount" type="number" step="0.01" value="" />
       </div>
     </div>
 
