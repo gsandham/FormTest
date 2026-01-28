@@ -85,8 +85,9 @@
       const otherAmount = otherAmountRaw === "" ? null : Number(otherAmountRaw);
       const rush = $("rush").checked;
       const notes = $("notes").value;
+      const notes2 = $("notes2").value;
 
-      return { customerNo, amount, otherAmount, rush, notes };
+      return { customerNo, amount, otherAmount, rush, notes, notes2 };
     }
 
     function validate(data) {
@@ -138,6 +139,7 @@
             if (obj.otherAmount != null) $("otherAmount").value = obj.otherAmount;
             if (obj.rush != null) $("rush").checked = !!obj.rush;
             if (obj.notes != null) $("notes").value = obj.notes;
+            if (obj.notes2 != null) $("notes2").value = obj.notes2;
             log("Prefilled fields from AL JSON.", "ok");
           }
         } catch (_) {
@@ -191,6 +193,9 @@
 
     <label for="notes">Notes</label>
     <textarea id="notes">This is a note</textarea>
+
+    <label for="notes2">Notes 2</label>
+    <textarea id="notes2"></textarea>
 
     <div class="actions">
       <button id="btnSubmit" class="primary">Submit to BC</button>
